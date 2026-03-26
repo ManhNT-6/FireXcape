@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 922775032061627809, guid: ddcb42fbe3bcd4a97a297ff6f2a466da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5515603538779698287, guid: ddcb42fbe3bcd4a97a297ff6f2a466da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
