@@ -4,3 +4,5 @@ Temp
 UserSettings
 *.csproj
 *.sln
+obj
+.idea
