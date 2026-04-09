@@ -2659,10 +2659,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   fireFX: {fileID: 9124932843260709061}
-  fireBurstPrefab: {fileID: 5712219488875869251, guid: 29f4c72f9a1d9d446945740c2819895b, type: 3}
+  fireBurstPrefab: {fileID: 7330394496371097789, guid: 745cb631ee747894e994759bb0458a8d, type: 3}
   intensity: 1
   maxIntensity: 3
-  timeToDanger: 10
+  timeToDanger: 30
   timeToFail: 120
   extinguishSpeed: 0.5
 --- !u!1001 &9173010518249388128

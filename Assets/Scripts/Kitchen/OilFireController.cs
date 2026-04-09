@@ -25,7 +25,7 @@ public class OilFireController : MonoBehaviour
     private bool isExtinguished = false;
     private bool isFailed = false;
 
-    void Update()
+    private void Update()
     {
         if (isExtinguished || isFailed) return;
 
@@ -41,7 +41,7 @@ public class OilFireController : MonoBehaviour
         }
     }
 
-    void HandleCovered()
+    private void HandleCovered()
     {
         intensity -= extinguishSpeed * Time.deltaTime;
         intensity = Mathf.Clamp(intensity, 0, maxIntensity);
@@ -54,7 +54,7 @@ public class OilFireController : MonoBehaviour
         }
     }
 
-    void HandleBurning()
+    private void HandleBurning()
     {
         // Lửa mạnh dần theo thời gian
         intensity += 0.3f * Time.deltaTime;
@@ -73,23 +73,23 @@ public class OilFireController : MonoBehaviour
         }
     }
 
-    void UpdateFireVisual()
+    private void UpdateFireVisual()
     {
         if (fireFX == null) return;
 
         var main = fireFX.main;
-        main.startSize = Mathf.Lerp(0.5f, 2.5f, intensity / maxIntensity);
+        main.startSize = Mathf.Lerp(0.5f, 1f, intensity / maxIntensity);
     }
 
-    void EnterDangerState()
+    private void EnterDangerState()
     {
-        // Chỉ log 1 lần (tránh spam)
         if (intensity < maxIntensity * 0.8f) return;
 
+        // should have smoke
         Debug.Log("WARNING: Fire is getting dangerous!");
     }
 
-    void ExtinguishSuccess()
+    private void ExtinguishSuccess()
     {
         isExtinguished = true;
 
@@ -100,7 +100,7 @@ public class OilFireController : MonoBehaviour
         GameController.Instance.Success(message);
     }
 
-    void FailTraining(string reason)
+    private void FailTraining(string reason)
     {
         if (isFailed) return;
         GameController.Instance.Fail("FAIL" + reason);
@@ -120,7 +120,7 @@ public class OilFireController : MonoBehaviour
         StartCoroutine(FlareUp());
     }
 
-    IEnumerator FlareUp()
+    private IEnumerator FlareUp()
     {
         isFailed = true;
 

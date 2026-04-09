@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -15,12 +16,13 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        //Time.timeScale = 0f;
-        //ui.ShowInstruction();
+        Time.timeScale = 0f;
+        ui.ShowInstruction();
     }
 
     public void StartTraining()
     {
+        Debug.Log("---Manh--- Start training");
         Time.timeScale = 1f;
         ui.HideInstruction();
     }
@@ -50,6 +52,6 @@ public class GameController : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 }

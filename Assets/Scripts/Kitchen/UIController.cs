@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -11,6 +12,11 @@ public class UIController : MonoBehaviour
     public TMP_Text resultTitle;
     public TMP_Text resultMessage;
 
+    private void OnEnable()
+    {
+        ShowInstruction();
+    }
+
     public void ShowInstruction()
     {
         instructionPanel.SetActive(true);
@@ -19,6 +25,8 @@ public class UIController : MonoBehaviour
 
     public void HideInstruction()
     {
+        Debug.Log("---Manh--- Hide introduction");
+        //GameController.Instance.StartTraining();
         instructionPanel.SetActive(false);
     }
 
