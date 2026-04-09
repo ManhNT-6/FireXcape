@@ -2,15 +2,54 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static GameController Instance;
+
+    public UIController ui;
+
+    private bool isGameEnded = false;
+
+    void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
+        //Time.timeScale = 0f;
+        //ui.ShowInstruction();
+    }
+
+    public void StartTraining()
+    {
+        Time.timeScale = 1f;
+        ui.HideInstruction();
+    }
+
+    public void Success(string message)
+    {
+        if (isGameEnded) return;
+
+        isGameEnded = true;
+        Time.timeScale = 0f;
+
+        ui.ShowResult(true, message);
+    }
+
+    public void Fail(string message)
+    {
+        Debug.Log("---Manh--- Check Fail");
+        if (isGameEnded) return;
         
+        Debug.Log("---Manh--- Show Popup result");
+        isGameEnded = true;
+        //Time.timeScale = 0f;
+
+        ui.ShowResult(false, message);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

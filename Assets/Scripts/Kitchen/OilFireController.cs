@@ -95,15 +95,16 @@ public class OilFireController : MonoBehaviour
 
         fireFX.Stop();
 
+        var message = "SUCCESS: Correctly extinguished oil fire!";
         Debug.Log("SUCCESS: Correctly extinguished oil fire!");
+        GameController.Instance.Success(message);
     }
 
     void FailTraining(string reason)
     {
         if (isFailed) return;
-
+        GameController.Instance.Fail("FAIL" + reason);
         isFailed = true;
-
         Debug.Log("FAIL: " + reason);
     }
 
@@ -135,6 +136,8 @@ public class OilFireController : MonoBehaviour
         {
             Instantiate(fireBurstPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         }
+        
+        GameController.Instance.Fail("FAIL Flare up");
 
         Debug.Log("FAIL: Water caused flare-up!");
 
