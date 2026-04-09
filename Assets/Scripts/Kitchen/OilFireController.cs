@@ -56,7 +56,6 @@ public class OilFireController : MonoBehaviour
 
     private void HandleBurning()
     {
-        // Lửa mạnh dần theo thời gian
         intensity += 0.3f * Time.deltaTime;
         intensity = Mathf.Clamp(intensity, 0, maxIntensity);
 
@@ -93,9 +92,10 @@ public class OilFireController : MonoBehaviour
     {
         isExtinguished = true;
 
+        fireFX.gameObject.SetActive(false);
         fireFX.Stop();
 
-        var message = "SUCCESS: Correctly extinguished oil fire!";
+        var message = "Correctly extinguished oil fire!";
         Debug.Log("SUCCESS: Correctly extinguished oil fire!");
         GameController.Instance.Success(message);
     }
@@ -124,14 +124,12 @@ public class OilFireController : MonoBehaviour
     {
         isFailed = true;
 
-        // Bùng lửa mạnh
         intensity = maxIntensity;
         UpdateFireVisual();
 
         var main = fireFX.main;
         main.startSize = 3.5f;
-
-        // Spawn hiệu ứng bùng
+        
         if (fireBurstPrefab != null)
         {
             Instantiate(fireBurstPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
@@ -148,11 +146,12 @@ public class OilFireController : MonoBehaviour
     // ===== LID DETECTION =========
     // =============================
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if  (other.gameObject.CompareTag("Lid"))
+        if (other.CompareTag("Lid"))
         {
             isCovered = true;
+            ExtinguishSuccess();
         }
     }
 
