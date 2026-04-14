@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lid
   - Fire
+  - Interactable
   layers:
   - Default
   - TransparentFX

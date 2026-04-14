@@ -1051,22 +1051,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4732099474099613977, guid: 4cf6f8ca14b464fd883cb727a01a1208, type: 3}
-      propertyPath: m_Size.y
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4732099474099613977, guid: 4cf6f8ca14b464fd883cb727a01a1208, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4732099474099613977, guid: 4cf6f8ca14b464fd883cb727a01a1208, type: 3}
-      propertyPath: m_Center.y
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4732099474099613977, guid: 4cf6f8ca14b464fd883cb727a01a1208, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4973512098030567804, guid: 4cf6f8ca14b464fd883cb727a01a1208, type: 3}
       propertyPath: m_Name
       value: Kitchen
@@ -1983,15 +1967,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8526860128984402923, guid: 862bc4f67c4424e488805114c71b7fda, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.77384025
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8526860128984402923, guid: 862bc4f67c4424e488805114c71b7fda, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8526860128984402923, guid: 862bc4f67c4424e488805114c71b7fda, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6333809
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8526860128984402923, guid: 862bc4f67c4424e488805114c71b7fda, type: 3}
       propertyPath: m_LocalRotation.z
