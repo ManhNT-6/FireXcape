@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Core
@@ -5,8 +6,10 @@ namespace Core
     public abstract class FireBase : MonoBehaviour
     {
         [Header("Settings")]
-        public float timeToDanger = 10f;
-        public float timeToFail = 20f;
+        [SerializeField] protected Transform[] firePoints;
+        [SerializeField] protected GameObject firePrefab;
+        public float timeToDanger;
+        public float timeToFail;
     
         protected float timer = 0f;
         protected bool isEnded = false;
@@ -25,7 +28,18 @@ namespace Core
         public virtual void FinishTraining(bool success, string message)
         {
             isEnded = true;
+            if (!success) StartCoroutine(I_Blazing());
             FireEvents.OnTrainingResult?.Invoke(success, message);
+        }
+
+        private IEnumerator I_Blazing()
+        {
+            foreach (var point in firePoints)
+            {
+                Instantiate(firePrefab, point.position, Quaternion.identity);
+            }
+            
+            yield return new WaitForSeconds(3f);
         }
     }
 }

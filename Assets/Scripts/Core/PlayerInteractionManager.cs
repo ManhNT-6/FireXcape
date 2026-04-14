@@ -19,6 +19,7 @@ namespace Core
 
         private void PickUp(GameObject target)
         {
+            Debug.Log($"---Manh--- Pickup {target.name}");
             _currentHeldObject = target;
             target.transform.SetParent(handAnchor);
             target.transform.localPosition = Vector3.zero;
