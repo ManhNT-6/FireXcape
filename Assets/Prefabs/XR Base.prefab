@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818de561293b419b89515e123064fae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.PlayerSensor
+  interactCooldown: 1
 --- !u!65 &5001645387863976149
 BoxCollider:
   m_ObjectHideFlags: 0

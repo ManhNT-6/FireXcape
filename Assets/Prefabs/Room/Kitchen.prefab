@@ -389,7 +389,7 @@ MonoBehaviour:
   - {fileID: 6083302057906725585}
   - {fileID: 1973921896819152470}
   - {fileID: 8426212088429470829}
-  firePrefab: {fileID: 7251879486380165639, guid: c2f6a8962aac3814aa56cb9647c93470, type: 3}
+  firePrefab: {fileID: 7330394496371097789, guid: 745cb631ee747894e994759bb0458a8d, type: 3}
   timeToDanger: 10
   timeToFail: 60
 --- !u!1001 &882062939932055085

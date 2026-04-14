@@ -48,7 +48,16 @@ namespace Core
         }
 
         // ================= XỬ LÝ HIỆN POPUP =================
-        private void ShowInteract(GameObject obj) { _currentItem = obj; popupInteract.SetActive(true); }
+        private void ShowInteract(GameObject obj)
+        {
+            if (obj.transform.parent != null && obj.transform.parent.name == "HandAnchor") 
+            {
+                return;
+            }
+
+            _currentItem = obj; 
+            popupInteract.SetActive(true);
+        }
         private void ShowFire(GameObject heldItem, GameObject fire) { popupFire.SetActive(true); }
         private void ShowResult(bool success, string msg)
         {
@@ -61,7 +70,15 @@ namespace Core
 
         // ================= CÁC NÚT BẤM GỌI VÀO ĐÂY =================
         public void BtnClick_Start() { popupStart.SetActive(false); }
-        public void BtnClick_PickUp() { FireEvents.OnPickUpRequest?.Invoke(_currentItem); popupInteract.SetActive(false); }
+        public void BtnClick_PickUp() 
+        { 
+            if (_currentItem != null)
+            {
+                FireEvents.OnPickUpRequest?.Invoke(_currentItem); 
+                _currentItem = null; 
+            }
+            popupInteract.SetActive(false); 
+        }
         public void BtnClick_Ignore() { _currentItem = null; popupInteract.SetActive(false); }
         public void BtnClick_UseFire() { FireEvents.OnUseObjectOnFire?.Invoke(); popupFire.SetActive(false); }
         public void BtnClick_CancelFire() { popupFire.SetActive(false); }
