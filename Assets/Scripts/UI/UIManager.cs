@@ -16,10 +16,6 @@ namespace Core
         public TextMeshProUGUI txtResultTitle;
         public TextMeshProUGUI txtResultMessage;
 
-        [Header("Chuyển Cảnh (Dành cho Dev setup)")]
-        [Tooltip("Gõ tên của Scene tiếp theo vào đây (VD: SceneOffice)")]
-        public string nextSceneName = "";
-
         private GameObject _currentItem;
 
         private void OnEnable()
@@ -64,21 +60,22 @@ namespace Core
         }
 
         // ================= CÁC NÚT BẤM GỌI VÀO ĐÂY =================
-        public void BtnClick_Start() { popupStart.SetActive(false); }
+        public void BtnClick_Start() { AudioManager.Instance?.PlayUIClick(); popupStart.SetActive(false); }
         
-        public void BtnClick_PickUp() { FireEvents.OnPickUpRequest?.Invoke(_currentItem); popupInteract.SetActive(false); }
+        public void BtnClick_PickUp() { AudioManager.Instance?.PlayUIClick(); FireEvents.OnPickUpRequest?.Invoke(_currentItem); popupInteract.SetActive(false); }
         
-        public void BtnClick_Ignore() { _currentItem = null; popupInteract.SetActive(false); }
+        public void BtnClick_Ignore() { AudioManager.Instance?.PlayUIClick(); _currentItem = null; popupInteract.SetActive(false); }
         
-        public void BtnClick_UseFire() { FireEvents.OnUseObjectOnFire?.Invoke(); popupFire.SetActive(false); }
+        public void BtnClick_UseFire() { AudioManager.Instance?.PlayUIClick(); FireEvents.OnUseObjectOnFire?.Invoke(); popupFire.SetActive(false); }
         
-        public void BtnClick_CancelFire() { popupFire.SetActive(false); }
+        public void BtnClick_CancelFire() { AudioManager.Instance?.PlayUIClick(); popupFire.SetActive(false); }
         
-        public void BtnClick_Continue() { popupResult.SetActive(false); popupSummary.SetActive(true); }
+        public void BtnClick_Continue() { AudioManager.Instance?.PlayUIClick(); popupResult.SetActive(false); popupSummary.SetActive(true); }
         
         // Nút Về Menu Chính
         public void BtnClick_BackMenu() 
         { 
+            AudioManager.Instance?.PlayUIClick();
             if (SceneTransitionManager.Instance != null)
                 SceneTransitionManager.Instance.LoadScene("SceneMenu"); 
             else
@@ -88,16 +85,33 @@ namespace Core
         // Nút Đi tới tình huống tiếp theo
         public void BtnClick_NextScene()
         {
-            if (!string.IsNullOrEmpty(nextSceneName))
+            AudioManager.Instance?.PlayUIClick();
+            HideAll(); // Đừng quên hàm giấu UI đi nhé (nếu file cậu đang thiếu thì giữ lại HideAll() của cậu)
+
+            // 1. Lấy vị trí (Index) của màn hình hiện tại
+            int currentIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            int nextIndex = currentIndex + 1;
+
+            // 2. Kiểm tra xem đã đến màn cuối cùng chưa (chống lỗi văng game)
+            if (nextIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
             {
+                // Mẹo: Lấy đường dẫn của Scene bằng Index, rồi trích xuất ra Tên Scene để đẩy cho TransitManager
+                string nextScenePath = UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(nextIndex);
+                string nextName = System.IO.Path.GetFileNameWithoutExtension(nextScenePath);
+
                 if (SceneTransitionManager.Instance != null)
-                    SceneTransitionManager.Instance.LoadScene(nextSceneName);
+                    SceneTransitionManager.Instance.LoadScene(nextName);
                 else
-                    UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(nextIndex);
             }
             else
             {
-                Debug.LogWarning("Chưa nhập tên Scene tiếp theo trong UIManager!");
+                Debug.LogWarning("Đây là màn cuối cùng rồi! Đưa người chơi về Menu.");
+                // 3. Nếu không còn màn nào nữa, cho tự động về Menu (Index 0)
+                if (SceneTransitionManager.Instance != null)
+                    SceneTransitionManager.Instance.LoadScene("SceneMenu");
+                else
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(0);
             }
         }
     }
