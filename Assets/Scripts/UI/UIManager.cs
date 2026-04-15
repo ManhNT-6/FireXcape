@@ -48,8 +48,19 @@ namespace Core
         }
 
         // ================= XỬ LÝ HIỆN POPUP TỪ EVENT =================
-        private void ShowInteract(GameObject obj) { _currentItem = obj; popupInteract.SetActive(true); }
-        private void ShowFire(GameObject heldItem, GameObject fire) { popupFire.SetActive(true); }
+        private void ShowInteract(GameObject obj)
+        {
+            _currentItem = obj;
+            popupInteract.SetActive(true);
+            SetCursorState(true);
+        }
+
+        private void ShowFire(GameObject heldItem, GameObject fire)
+        {
+            popupFire.SetActive(true);
+            SetCursorState(true);
+        }
+        
         private void ShowResult(bool success, string msg)
         {
             HideAll();
@@ -60,17 +71,50 @@ namespace Core
         }
 
         // ================= CÁC NÚT BẤM GỌI VÀO ĐÂY =================
-        public void BtnClick_Start() { AudioManager.Instance?.PlayUIClick(); popupStart.SetActive(false); }
-        
-        public void BtnClick_PickUp() { AudioManager.Instance?.PlayUIClick(); FireEvents.OnPickUpRequest?.Invoke(_currentItem); popupInteract.SetActive(false); }
-        
-        public void BtnClick_Ignore() { AudioManager.Instance?.PlayUIClick(); _currentItem = null; popupInteract.SetActive(false); }
-        
-        public void BtnClick_UseFire() { AudioManager.Instance?.PlayUIClick(); FireEvents.OnUseObjectOnFire?.Invoke(); popupFire.SetActive(false); }
-        
-        public void BtnClick_CancelFire() { AudioManager.Instance?.PlayUIClick(); popupFire.SetActive(false); }
-        
-        public void BtnClick_Continue() { AudioManager.Instance?.PlayUIClick(); popupResult.SetActive(false); popupSummary.SetActive(true); }
+        public void BtnClick_Start()
+        {
+            AudioManager.Instance?.PlayUIClick(); 
+            popupStart.SetActive(false);
+            SetCursorState(false);
+        }
+
+        public void BtnClick_PickUp()
+        {
+            AudioManager.Instance?.PlayUIClick(); 
+            FireEvents.OnPickUpRequest?.Invoke(_currentItem); 
+            popupInteract.SetActive(false);
+            SetCursorState(false);
+        }
+
+        public void BtnClick_Ignore()
+        {
+            AudioManager.Instance?.PlayUIClick(); 
+            _currentItem = null; 
+            popupInteract.SetActive(false);
+            SetCursorState(false);
+        }
+
+        public void BtnClick_UseFire()
+        {
+            AudioManager.Instance?.PlayUIClick(); 
+            FireEvents.OnUseObjectOnFire?.Invoke(); 
+            popupFire.SetActive(false);
+        }
+
+        public void BtnClick_CancelFire()
+        {
+            AudioManager.Instance?.PlayUIClick();
+            popupFire.SetActive(false);
+            SetCursorState(false);
+        }
+
+        public void BtnClick_Continue()
+        {
+            AudioManager.Instance?.PlayUIClick();
+            popupResult.SetActive(false); 
+            popupSummary.SetActive(true);
+            SetCursorState(true);
+        }
         
         // Nút Về Menu Chính
         public void BtnClick_BackMenu() 
@@ -113,6 +157,12 @@ namespace Core
                 else
                     UnityEngine.SceneManagement.SceneManager.LoadScene(0);
             }
+        }
+        
+        private void SetCursorState(bool isUIVisible)
+        {
+            Cursor.lockState = isUIVisible ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = isUIVisible;
         }
     }
 }

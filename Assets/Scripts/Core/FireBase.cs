@@ -5,10 +5,11 @@ namespace Core
 {
     public abstract class FireBase : MonoBehaviour
     {
-        [Header("Settings")]
+        [Header("Settings")] 
+        [SerializeField] protected GameObject fireObject;
         [SerializeField] protected Transform[] firePoints;
         [SerializeField] protected GameObject firePrefab;
-        public float timeToDanger;
+        public float extinguishDuration;
         public float timeToFail;
     
         protected float timer = 0f;
@@ -28,8 +29,24 @@ namespace Core
         public virtual void FinishTraining(bool success, string message)
         {
             isEnded = true;
-            if (!success) StartCoroutine(I_Blazing());
+            StartCoroutine(!success ? I_Blazing() : I_ExtinguishAndShowResult());
             FireEvents.OnTrainingResult?.Invoke(success, message);
+        }
+        
+        private IEnumerator I_ExtinguishAndShowResult()
+        {
+            if (fireObject == null) yield break;
+            
+            Vector3 startScale = fireObject.transform.localScale;
+            float elapsed = 0f;
+
+            while (elapsed < extinguishDuration)
+            {
+                elapsed += Time.deltaTime;
+                fireObject.transform.localScale = Vector3.Lerp(startScale, Vector3.zero, elapsed / extinguishDuration);
+                yield return null;
+            }
+            fireObject.SetActive(false);
         }
 
         private IEnumerator I_Blazing()

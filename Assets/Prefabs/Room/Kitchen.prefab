@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865d1ab18a554193a4eed5403eb80e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.OilFireCore
+  fireObject: {fileID: 1529235746638868724}
   firePoints:
   - {fileID: 990089506738000931}
   - {fileID: 5066198844242678055}
@@ -390,7 +391,7 @@ MonoBehaviour:
   - {fileID: 1973921896819152470}
   - {fileID: 8426212088429470829}
   firePrefab: {fileID: 7330394496371097789, guid: 745cb631ee747894e994759bb0458a8d, type: 3}
-  timeToDanger: 10
+  extinguishDuration: 3
   timeToFail: 60
 --- !u!1001 &882062939932055085
 PrefabInstance:
@@ -450,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153190104667791796, guid: 1d6bd57fef0d09a4ca288a9353656510, type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1092,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153190104667791796, guid: 1d6bd57fef0d09a4ca288a9353656510, type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1883,6 +1884,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2f6a8962aac3814aa56cb9647c93470, type: 3}
+--- !u!1 &1529235746638868724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7251879486380165639, guid: c2f6a8962aac3814aa56cb9647c93470, type: 3}
+  m_PrefabInstance: {fileID: 8186196360540519155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8901182721270997379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 728576751314082672, guid: c2f6a8962aac3814aa56cb9647c93470, type: 3}
