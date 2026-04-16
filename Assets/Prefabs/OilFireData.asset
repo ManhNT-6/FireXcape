@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2884f6711b0144a1925bc63f43eb82ce, type: 3}
+  m_Name: OilFireData
+  m_EditorClassIdentifier: Assembly-CSharp::Core.ScenarioData
+  scenarioName: Oil Fire
+  instructionEN: In the event of a <color=#FFCC00>grease fire, use a <color=#FFCC00>damp
+    cloth or a <color=#FFCC00>lid to <color=#FFCC00>smother the flames and cut off
+    the oxygen supply. Under no circumstances should you <color=#FF0000>use water,
+    as it will cause the fire to <color=#FF0000>flare up dangerously.
+  timeLimit: 60
+  firePrefab: {fileID: 0}

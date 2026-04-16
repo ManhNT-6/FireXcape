@@ -53,5 +53,10 @@ namespace Kitchen
             textUI.text = fullText;
             isTyping = false;
         }
+        public void SetupAndStart(string content)
+        {
+            fullText = content;
+            StartTyping();
+        }
     }
 }
