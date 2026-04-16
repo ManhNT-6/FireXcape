@@ -1,3 +1,4 @@
+using Electrics;
 using UnityEngine;
 using TMPro;
 
@@ -82,6 +83,7 @@ namespace Core
         {
             AudioManager.Instance?.PlayUIClick(); 
             FireEvents.OnPickUpRequest?.Invoke(_currentItem); 
+            ShieldMetallController.Instance?.ToggleMainKnob();
             popupInteract.SetActive(false);
             SetCursorState(false);
         }
