@@ -20,6 +20,8 @@ namespace Core
         // When finished => show a Result popup.
         public static Action<bool, string> OnTrainingResult;
         
+        public static Action<float> OnTimerUpdated;
+        
         public static Action OnLeaveInteractable;
         public static Action OnLeaveFireZone;
     }

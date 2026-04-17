@@ -19,6 +19,9 @@ namespace Core
         {
             if (isEnded) return;
             timer += Time.deltaTime;
+            
+            float progress = Mathf.Clamp01(timer / timeToFail);
+            FireEvents.OnTimerUpdated?.Invoke(progress);
         
             if (timer > timeToFail) HandleTimeOut();
         }

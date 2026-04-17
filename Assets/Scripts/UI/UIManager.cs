@@ -18,12 +18,13 @@ namespace Core
         public TextMeshProUGUI txtResultMessage;
 
         private GameObject _currentItem;
-
+        
         private void OnEnable()
         {
             FireEvents.OnNearbyInteractable += ShowInteract;
             FireEvents.OnObjectNearFire += ShowFire;
             FireEvents.OnTrainingResult += ShowResult;
+            ShieldMetallController.OnMainKnobTurnedOff += ActiveCursor;
         }
 
         private void OnDisable()
@@ -66,7 +67,7 @@ namespace Core
         {
             HideAll();
             popupResult.SetActive(true);
-            txtResultTitle.text = success ? "THÀNH CÔNG!" : "THẤT BẠI!";
+            txtResultTitle.text = success ? "SUCCESS!" : "FAILURE!";
             txtResultTitle.color = success ? Color.green : Color.red;
             txtResultMessage.text = msg;
         }
@@ -82,10 +83,18 @@ namespace Core
         public void BtnClick_PickUp()
         {
             AudioManager.Instance?.PlayUIClick(); 
-            FireEvents.OnPickUpRequest?.Invoke(_currentItem); 
-            ShieldMetallController.Instance?.ToggleMainKnob();
+            FireEvents.OnPickUpRequest?.Invoke(_currentItem);
+            if (ShieldMetallController.Instance != null)
+            {
+                ShieldMetallController.Instance.ToggleMainKnob();
+            }
             popupInteract.SetActive(false);
             SetCursorState(false);
+        }
+
+        private void ActiveCursor()
+        {
+            SetCursorState(true);
         }
 
         public void BtnClick_Ignore()

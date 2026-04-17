@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2884f6711b0144a1925bc63f43eb82ce, type: 3}
+  m_Name: ElectricFireData
+  m_EditorClassIdentifier: Assembly-CSharp::Core.ScenarioData
+  scenarioName: Electric
+  instructionEN: In the event of an <color=#FFCC00>electrical fire, the first priority
+    is to <color=#FFCC00>shut off the power source at the main breaker. Once the
+    power is disconnected, use a <color=#FFCC00>CO2 or dry powder extinguisher to
+    put out the fire. Never <color=#FF0000>use water on an active electrical fire,
+    as it poses a severe <color=#FF0000>electrocution risk
+  timeLimit: 60
+  firePrefab: {fileID: 0}
