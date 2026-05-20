@@ -30,9 +30,9 @@ namespace Electrics
             }
         }
 
-        protected override void HandleTimeOut()
-        {
-            FinishTraining(false, "It took too long, and the fire spread throughout the entire kitchen.!");
-        }
+        // protected override void HandleTimeOut()
+        // {
+        //     FinishTraining(false, "It took too long, and the fire spread throughout the entire kitchen.!");
+        // }
     }
 }

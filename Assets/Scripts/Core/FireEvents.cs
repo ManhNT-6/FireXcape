@@ -21,8 +21,12 @@ namespace Core
         public static Action<bool, string> OnTrainingResult;
         
         public static Action<float> OnTimerUpdated;
-        
-        public static Action OnLeaveInteractable;
-        public static Action OnLeaveFireZone;
+
+        public static Action OnDangerWarning;
+
+        public static Action<bool> OnSafeZoneStateChanged;
+
+        // public static Action OnLeaveInteractable;
+        // public static Action OnLeaveFireZone;
     }
 }
