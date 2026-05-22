@@ -19,6 +19,8 @@ namespace Core
 
         // When finished => show a Result popup.
         public static Action<bool, string> OnTrainingResult;
+
+        public static Action OnTrainingStart;
         
         public static Action<float> OnTimerUpdated;
 

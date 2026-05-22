@@ -67,6 +67,7 @@ namespace Core
         {
             HideAll();
             popupResult.SetActive(true);
+            SetCursorState(true);
             txtResultTitle.text = success ? "SUCCESS!" : "FAILURE!";
             txtResultTitle.color = success ? Color.green : Color.red;
             txtResultMessage.text = msg;
@@ -76,6 +77,7 @@ namespace Core
         public void BtnClick_Start()
         {
             AudioManager.Instance?.PlayUIClick(); 
+            FireEvents.OnTrainingStart?.Invoke();
             popupStart.SetActive(false);
             SetCursorState(false);
         }

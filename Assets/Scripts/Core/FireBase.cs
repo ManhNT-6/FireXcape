@@ -17,16 +17,19 @@ namespace Core
         protected float timer = 0f;
         protected bool isEnded = false;
 
+        private bool _isStartTraining;
         private bool _isPlayerInSafeZone;
 
         private void OnEnable()
         {
             FireEvents.OnSafeZoneStateChanged += UpdatePlayerSafeState;
+            FireEvents.OnTrainingStart += UpdateTrainingState;
         }
 
         private void OnDisable()
         {
             FireEvents.OnSafeZoneStateChanged -= UpdatePlayerSafeState;
+            FireEvents.OnTrainingStart -= UpdateTrainingState;
         }
 
         private void UpdatePlayerSafeState(bool isSafe)
@@ -34,9 +37,15 @@ namespace Core
             _isPlayerInSafeZone = isSafe;
         }
 
+        private void UpdateTrainingState()
+        {
+            _isStartTraining = true;
+        }
+
         protected virtual void Update()
         {
             if (isEnded) return;
+            if (!_isStartTraining) return;
             timer += Time.deltaTime;
             
             float progress = Mathf.Clamp01(timer / timeToFail);
@@ -53,11 +62,11 @@ namespace Core
         {
             if (_isPlayerInSafeZone)
             {
-                FinishTraining(true, "Bạn đã sơ tán an toàn! Hoàn thành xuất sắc.");
+                FinishTraining(true, "Bạn đã an toàn! Hoàn thành xuất sắc.");
             }
             else
             {
-                FinishTraining(false, "Hết thời gian sơ tán. Bạn đã bị ngạt khói/mắc kẹt trong đám cháy.");
+                FinishTraining(false, "Hết thời gian. Bạn đã bị mắc kẹt trong đám cháy.");
             }
         }
     
