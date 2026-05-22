@@ -35,6 +35,7 @@ namespace Core
         private void UpdatePlayerSafeState(bool isSafe)
         {
             _isPlayerInSafeZone = isSafe;
+            if (isSafe) HandleTimeOut();
         }
 
         private void UpdateTrainingState()

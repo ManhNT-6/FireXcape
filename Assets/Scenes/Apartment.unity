@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7252987349625209352, guid: ddcb42fbe3bcd4a97a297ff6f2a466da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9782383
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252987349625209352, guid: ddcb42fbe3bcd4a97a297ff6f2a466da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.20748489
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252987349625209352, guid: ddcb42fbe3bcd4a97a297ff6f2a466da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -23.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -195,63 +207,6 @@ PrefabInstance:
     - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.844
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3995.923
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
---- !u!1001 &402411199
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4307560395867504668, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_Name
-      value: Fire Extinguisher (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 990.783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.791
       objectReference: {fileID: 0}
     - target: {fileID: 4345197550711715204, guid: bf0ea4a7b2c279047a7d801bff445913, type: 3}
       propertyPath: m_LocalPosition.z
@@ -689,6 +644,5 @@ SceneRoots:
   - {fileID: 50341961}
   - {fileID: 1559918827}
   - {fileID: 208120648}
-  - {fileID: 402411199}
   - {fileID: 1620571731}
   - {fileID: 1890848544}
