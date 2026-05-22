@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2884f6711b0144a1925bc63f43eb82ce, type: 3}
   m_Name: LaboratoryData
   m_EditorClassIdentifier: Assembly-CSharp::Core.ScenarioData
-  scenarioName: Laboratory
-  instructionEN: A <color=#FFCC00>chemical explosion has occurred! In a laboratory
-    environment, you must quickly identify the source of the fire. Use a <color=#FFCC00>fire
-    extinguisher (CO2 or Dry Powder) to suppress the flames from a <color=#FFCC00>safe
-    distance. Be cautious of <color=#FF0000>toxic fumes and secondary explosions.
-    Do not attempt to use water on <color=#FF0000>chemical fires as it may cause
-    a violent reaction.
+  scenarioName: "Ch\xE1y ph\xF2ng th\xED nghi\u1EC7m"
+  instructionEN: "\u0110\xE3 x\u1EA3y ra m\u1ED9t v\u1EE5 n\u1ED5 h\xF3a ch\u1EA5t!
+    Trong m\xF4i tr\u01B0\u1EDDng ph\xF2ng th\xED nghi\u1EC7m, b\u1EA1n ph\u1EA3i
+    nhanh ch\xF3ng x\xE1c \u0111\u1ECBnh ngu\u1ED3n g\u1ED1c c\u1EE7a \u0111\xE1m
+    ch\xE1y. S\u1EED d\u1EE5ng b\xECnh ch\u1EEFa ch\xE1y (CO2 ho\u1EB7c b\u1ED9t
+    kh\xF4) \u0111\u1EC3 d\u1EADp t\u1EAFt ng\u1ECDn l\u1EEDa t\u1EEB kho\u1EA3ng
+    c\xE1ch an to\xE0n. C\u1EA9n th\u1EADn v\u1EDBi kh\xF3i \u0111\u1ED9c v\xE0 c\xE1c
+    v\u1EE5 n\u1ED5 th\u1EE9 c\u1EA5p. Kh\xF4ng \u0111\u01B0\u1EE3c d\xF9ng n\u01B0\u1EDBc
+    \u0111\u1EC3 d\u1EADp t\u1EAFt \u0111\xE1m ch\xE1y h\xF3a ch\u1EA5t v\xEC c\xF3
+    th\u1EC3 g\xE2y ra ph\u1EA3n \u1EE9ng d\u1EEF d\u1ED9i."
   timeLimit: 60
   firePrefab: {fileID: 0}

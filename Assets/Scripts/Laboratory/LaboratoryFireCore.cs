@@ -8,7 +8,7 @@ namespace Core
         {
             if (tool.layer.Equals(7))
             {
-                FinishTraining(true,"Success! You have successfully contained the chemical fire using a CO2 extinguisher.");
+                FinishTraining(true,"Thành công! Bạn đã dập tắt thành công đám cháy hóa chất bằng bình chữa cháy CO2.");
             }
         }
 

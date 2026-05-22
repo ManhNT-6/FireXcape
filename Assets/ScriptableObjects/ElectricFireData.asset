@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2884f6711b0144a1925bc63f43eb82ce, type: 3}
   m_Name: ElectricFireData
   m_EditorClassIdentifier: Assembly-CSharp::Core.ScenarioData
-  scenarioName: Electric
-  instructionEN: In the event of an <color=#FFCC00>electrical fire, the first priority
-    is to <color=#FFCC00>shut off the power source at the main breaker. Once the
-    power is disconnected, use a <color=#FFCC00>CO2 or dry powder extinguisher to
-    put out the fire. Never <color=#FF0000>use water on an active electrical fire,
-    as it poses a severe <color=#FF0000>electrocution risk
+  scenarioName: "Ch\xE1y do ch\u1EADp \u0111i\u1EC7n"
+  instructionEN: "Trong tr\u01B0\u1EDDng h\u1EE3p x\u1EA3y ra h\u1ECFa ho\u1EA1n
+    do \u0111i\u1EC7n, \u01B0u ti\xEAn h\xE0ng \u0111\u1EA7u l\xE0 ng\u1EAFt ngu\u1ED3n
+    \u0111i\u1EC7n t\u1EA1i c\u1EA7u dao ch\xEDnh. Sau khi ng\u1EAFt \u0111i\u1EC7n,
+    h\xE3y s\u1EED d\u1EE5ng b\xECnh ch\u1EEFa ch\xE1y CO2 ho\u1EB7c b\u1ED9t kh\xF4
+    \u0111\u1EC3 d\u1EADp t\u1EAFt \u0111\xE1m ch\xE1y. Tuy\u1EC7t \u0111\u1ED1i
+    kh\xF4ng \u0111\u01B0\u1EE3c d\xF9ng n\u01B0\u1EDBc \u0111\u1EC3 d\u1EADp t\u1EAFt
+    \u0111\xE1m ch\xE1y \u0111i\u1EC7n \u0111ang ho\u1EA1t \u0111\u1ED9ng, v\xEC
+    \u0111i\u1EC1u n\xE0y ti\u1EC1m \u1EA9n nguy c\u01A1 \u0111i\u1EC7n gi\u1EADt
+    nghi\xEAm tr\u1ECDng."
   timeLimit: 60
   firePrefab: {fileID: 0}

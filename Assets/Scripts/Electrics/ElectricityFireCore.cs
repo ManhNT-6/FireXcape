@@ -7,17 +7,19 @@ namespace Electrics
     {
         private void OnEnable()
         {
+            base.OnEnable();
             ShieldMetallController.OnMainKnobTurnedOff += HandlePowerOff;
         }
 
         private void OnDisable()
         {
+            base.OnDisable();
             ShieldMetallController.OnMainKnobTurnedOff -= HandlePowerOff;
         }
 
         private void HandlePowerOff()
         {
-            FinishTraining(true,"Power is off. Fire can now be extinguished.");
+            FinishTraining(true,"Điện đã bị ngắt. Có thể dập tắt đám cháy.");
         }
         
         public override void ProcessInteraction(GameObject tool)
@@ -25,8 +27,7 @@ namespace Electrics
             if (tool.layer.Equals(4)) // Nếu là nước
             {
                 //  logic fire outbreaks
-                Debug.Log("---Manh--- Check: Fire is interacting with water");
-                FinishTraining(false, "Failure! Pouring water on an electricity fire caused a dangerous flare-up.!");
+                FinishTraining(false, "Thất bại! Việc đổ nước vào đám cháy điện đã gây ra một vụ bùng phát nguy hiểm!");
             }
         }
 

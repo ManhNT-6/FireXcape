@@ -68,7 +68,7 @@ namespace Core
             HideAll();
             popupResult.SetActive(true);
             SetCursorState(true);
-            txtResultTitle.text = success ? "SUCCESS!" : "FAILURE!";
+            txtResultTitle.text = success ? "THÀNH CÔNG!" : "THẤT BẠI!";
             txtResultTitle.color = success ? Color.green : Color.red;
             txtResultMessage.text = msg;
         }

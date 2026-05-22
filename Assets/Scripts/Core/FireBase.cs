@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,21 +11,22 @@ namespace Core
         [SerializeField] protected GameObject firePrefab;
         public float extinguishDuration;
         public float timeToFail;
-        public float warningTime;
-    
-        protected float timer = 0f;
-        protected bool isEnded = false;
+        private const float WarningTime = 30f;
+
+        private float _timer;
+        private bool _isEnded;
+        private bool _isWarning;
 
         private bool _isStartTraining;
         private bool _isPlayerInSafeZone;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             FireEvents.OnSafeZoneStateChanged += UpdatePlayerSafeState;
             FireEvents.OnTrainingStart += UpdateTrainingState;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             FireEvents.OnSafeZoneStateChanged -= UpdatePlayerSafeState;
             FireEvents.OnTrainingStart -= UpdateTrainingState;
@@ -44,21 +44,31 @@ namespace Core
 
         protected virtual void Update()
         {
-            if (isEnded) return;
+            if (_isEnded) return;
             if (!_isStartTraining) return;
-            timer += Time.deltaTime;
+            _timer += Time.deltaTime;
             
-            float progress = Mathf.Clamp01(timer / timeToFail);
+            float progress = Mathf.Clamp01(_timer / timeToFail);
             FireEvents.OnTimerUpdated?.Invoke(progress);
             
-            if (timer >= warningTime) FireEvents.OnDangerWarning?.Invoke(); // update ui canh bao 
+            CheckWarning();
         
-            if (timer > timeToFail) HandleTimeOut();
+            if (_timer > timeToFail) HandleTimeOut();
         }
 
         public abstract void ProcessInteraction(GameObject tool);
 
-        protected void HandleTimeOut()
+        private void CheckWarning()
+        {
+            if (_timer < WarningTime) return;
+            if (_isWarning) return;
+            
+            _isWarning = true;
+            StartCoroutine(I_Blazing());
+            FireEvents.OnDangerWarning?.Invoke(); // update ui canh bao 
+        }
+
+        private void HandleTimeOut()
         {
             if (_isPlayerInSafeZone)
             {
@@ -72,7 +82,7 @@ namespace Core
     
         public virtual void FinishTraining(bool success, string message)
         {
-            isEnded = true;
+            _isEnded = true;
             StartCoroutine(!success ? I_Blazing() : I_ExtinguishAndShowResult());
             FireEvents.OnTrainingResult?.Invoke(success, message);
         }

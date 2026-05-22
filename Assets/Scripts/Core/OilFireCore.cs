@@ -8,11 +8,11 @@ namespace Core
         {
             if (tool.layer.Equals(6))
             {
-                FinishTraining(true, "You extinguished the oil fire correctly using the pot lid!");
+                FinishTraining(true, "Bạn đã dập tắt đám cháy đúng cách bằng cách sử dụng nắp nồi!");
             }
             else if (tool.layer.Equals(4)) // Nếu là nước
             {
-                FinishTraining(false, "Failure! Pouring water on an oil fire caused a dangerous flare-up.!");
+                FinishTraining(false, "Thất bại! Việc đổ nước vào đám cháy dầu đã gây ra một vụ bùng phát nguy hiểm!");
             }
         }
 
