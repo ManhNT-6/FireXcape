@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneElectrics.unity
     guid: 3b2d3171fa71d47cebaa6237cce6aaa6
   - enabled: 1
+    path: Assets/Scenes/SceneApartment.unity
+    guid: 2ecdb8405cded498fabc22d20d9fdfb8
+  - enabled: 1
     path: Assets/Scenes/Laboratory Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:

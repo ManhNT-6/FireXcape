@@ -1,6 +1,7 @@
 using Electrics;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace Core
 {
@@ -170,6 +171,12 @@ namespace Core
                 else
                     UnityEngine.SceneManagement.SceneManager.LoadScene(0);
             }
+        }
+
+        public void ReTraining()
+        {
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentIndex);
         }
         
         private void SetCursorState(bool isUIVisible)

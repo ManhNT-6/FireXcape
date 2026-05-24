@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2884f6711b0144a1925bc63f43eb82ce, type: 3}
-  m_Name: ElectricFireData
+  m_Name: ApartmentFireData
   m_EditorClassIdentifier: Assembly-CSharp::Core.ScenarioData
-  scenarioName: "Ch\xE1y do ch\u1EADp \u0111i\u1EC7n"
-  instructionEN: "Trong tr\u01B0\u1EDDng h\u1EE3p ch\xE1y do \u0111i\u1EC7n, \u01B0u
-    ti\xEAn ng\u1EAFt ngu\u1ED3n \u0111i\u1EC7n t\u1EA1i c\u1EA7u dao ch\xEDnh. Kh\xF4ng
-    \u0111\u01B0\u1EE3c d\xF9ng n\u01B0\u1EDBc \u0111\u1EC3 d\u1EADp t\u1EAFt \u0111\xE1m
-    ch\xE1y \u0111i\u1EC7n \u0111ang ho\u1EA1t \u0111\u1ED9ng."
+  scenarioName: "Ch\xE1y l\u1EDBn trong nh\xE0"
+  instructionEN: "Khi x\u1EA3y ra ch\xE1y l\u1EDBn trong nh\xE0, tuy\u1EC7t \u0111\u1ED1i
+    kh\xF4ng ch\u1EA1y l\xEAn c\xE1c t\u1EA7ng cao hay s\xE2n th\u01B0\u1EE3ng. H\xE3y
+    t\xECm l\u1ED1i c\u1EA7u thang b\u1ED9 \u0111\u1EC3 di chuy\u1EC3n xu\u1ED1ng
+    m\u1EB7t \u0111\u1EA5t tho\xE1t ra ngo\xE0i nhanh nh\u1EA5t c\xF3 th\u1EC3."
   timeLimit: 60
   firePrefab: {fileID: 0}

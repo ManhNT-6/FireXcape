@@ -15,9 +15,8 @@ MonoBehaviour:
   scenarioName: "Ch\xE1y ch\u1EA3o d\u1EA7u"
   instructionEN: "Trong tr\u01B0\u1EDDng h\u1EE3p x\u1EA3y ra h\u1ECFa ho\u1EA1n
     do d\u1EA7u m\u1EE1, h\xE3y d\xF9ng kh\u0103n \u1EA9m ho\u1EB7c n\u1EAFp \u0111\u1EADy
-    \u0111\u1EC3 d\u1EADp t\u1EAFt ng\u1ECDn l\u1EEDa v\xE0 c\u1EAFt \u0111\u1EE9t
-    ngu\u1ED3n cung c\u1EA5p oxy. Tuy\u1EC7t \u0111\u1ED1i kh\xF4ng \u0111\u01B0\u1EE3c
-    d\xF9ng n\u01B0\u1EDBc, v\xEC n\u01B0\u1EDBc s\u1EBD khi\u1EBFn ng\u1ECDn l\u1EEDa
-    b\xF9ng l\xEAn nguy hi\u1EC3m."
+    \u0111\u1EC3 d\u1EADp t\u1EAFt ng\u1ECDn l\u1EEDa. Tuy\u1EC7t \u0111\u1ED1i kh\xF4ng
+    \u0111\u01B0\u1EE3c d\xF9ng n\u01B0\u1EDBc, v\xEC n\u01B0\u1EDBc s\u1EBD khi\u1EBFn
+    ng\u1ECDn l\u1EEDa b\xF9ng l\xEAn nguy hi\u1EC3m."
   timeLimit: 60
   firePrefab: {fileID: 0}
